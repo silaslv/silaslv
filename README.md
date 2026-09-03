@@ -1,344 +1,62 @@
-# 从科学计算到 LLM 系统工程：一个工程师的技术演进路径
+# 吕绪鑫 / Xuxin Lü
 
-> 作者：吕绪鑫
-> 方向：企业级 LLM 应用 / AI 平台工程 / 私有化部署
+**Python Backend Engineer · Enterprise AI Application Engineer**
 
-这不是一份简历，而是一次技术路径梳理：一个工程师如何从数学与科学计算出发，经历数据处理、企业软件工程，最终走向 LLM 系统工程。
+I build reliable backend services and bring LLM capabilities into real business workflows.
 
-如果只看经历：
+## About
 
-- 做过卫星导航数据处理；
-- 开发过企业级 SaaS 系统；
-- 最近研究本地大模型部署和 Agent 系统。
+- 5+ years in technology, including 3+ years developing enterprise Python backends
+- Experience with multi-tenant SaaS, workflow systems, data permissions, and third-party integrations
+- Enterprise AI experience covering assistants, intelligent search, tool calling, and job-candidate matching
+- Mathematics background with earlier work in scientific data analysis and GNSS positioning
 
-这些看起来像几个不同方向。
+## Core Stack
 
-但回顾过去几年的技术积累，我发现它们实际上围绕着同一个问题：
+`Python` · `Tornado` · `SQLAlchemy` · `MySQL` · `Redis` · `Elasticsearch` · `WebSocket`
 
-> 如何把复杂、不确定的数据和问题，转化为可靠、可使用的系统能力。
+`LLM` · `Agent` · `RAG` · `Tool Calling` · `llama.cpp` · `AMD ROCm` · `GGUF`
 
-这条路径可以概括为：
+`Linux` · `Docker` · `Git` · `AngularJS` · `Angular` · `Vue 3` · `TypeScript`
 
-```text
-数学建模
-    ↓
-科学数据处理
-    ↓
-企业软件工程
-    ↓
-LLM 系统工程
-```
+## Featured Project
 
-## 一、数学背景：建立分析复杂问题的方法
+### [llm-assistant](https://github.com/silaslv/llm-assistant)
 
-本科就读于哈尔滨工业大学（威海）数学与应用数学专业。
+[![Tests](https://github.com/silaslv/llm-assistant/actions/workflows/tests.yml/badge.svg)](https://github.com/silaslv/llm-assistant/actions/workflows/tests.yml)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/Platform-KDE%20Plasma%206-1D99F3?logo=kde&logoColor=white)](https://kde.org/plasma-desktop/)
 
-本科阶段系统学习数学分析、高等代数、几何、数值分析等课程，同时辅修工商管理方向，学习经济学、管理学、会计学等内容。
+A local LLM desktop assistant built around an OpenAI-compatible `llama-server` endpoint.
 
-数学训练带给我的价值，并不只是公式和证明，而是两种长期影响：
+- Shared `llm_core` used by PyQt6, local CLI, and KDE Plasma clients
+- OpenAI-compatible HTTP/SSE to the model server, plus Unix socket and D-Bus for local clients
+- Multi-turn tool calling with confirmation gates, sensitive-path protection, and JSONL audit logs
+- 65 unit tests covering the agent loop, tools, and security policy
 
-**1. 将复杂问题形式化**
+## Engineering Focus
 
-面对一个实际问题时，先明确：
+- Deterministic business execution around probabilistic model output
+- Permission-aware enterprise AI and auditable tool use
+- Reproducible local-model deployment and performance evaluation
+- Maintainable knowledge and retrieval pipelines
 
-- 输入是什么；
-- 输出是什么；
-- 约束在哪里；
-- 如何评价结果。
-
-这种思维方式后来一直影响我的工程实践。
-
-无论是定位算法、企业系统设计，还是 LLM 应用架构，本质都是先建立问题模型，再寻找解决方案。
-
-**2. 对结果可靠性的关注**
-
-数值分析让我意识到：
-
-计算结果并不天然可信。
-
-算法存在：
-
-- 误差；
-- 边界条件；
-- 稳定性问题。
-
-后来进行模型性能测试和工程 benchmark 时，我会更加关注：
-
-- 测试条件是否一致；
-- 数据是否可复现；
-- 结论是否可靠。
-
-本科期间获得全国大学生数学竞赛省级一等奖，也进一步强化了数学分析和问题抽象能力。
-
-毕业设计方向为高维数据特征提取，这也是我第一次接触高维数据处理问题。
-
-## 二、科学数据工程：从空间数据到 GNSS 完整链路
-
-毕业后进入威海五洲卫星导航科技有限公司。
-
-早期参与遥感和空间数据相关工作，包括：
-
-- NASA 气候全球分布数据可视化；
-- 全球碳相关数据可视化；
-- 全球验潮站空间分布研究。
-
-其中，在全球验潮站研究中使用聚类方法进行空间分布分析。
-
-这段经历让我建立了第一套完整的数据处理流程：
+## Background
 
 ```text
-数据获取
- ↓
-数据清洗
- ↓
-特征分析
- ↓
-算法处理
- ↓
-结果验证
- ↓
-可视化展示
+Mathematics & scientific computing
+              ↓
+Spatial data & GNSS positioning
+              ↓
+Enterprise Python backend systems
+              ↓
+Reliable LLM application engineering
 ```
 
-后来转向 GNSS 导航方向，我开始系统学习 Python，并从接收机协议和原始数据开始，实现：
+The longer version of this journey is available in [Career Path](docs/career-path.md).
 
-- GNSS 数据解析；
-- 信号处理；
-- 伪距计算；
-- 差分定位算法验证。
+## Contact
 
-最终完成：
-
-```text
-原始接收机数据
-        ↓
-协议解析
-        ↓
-数据处理
-        ↓
-定位算法
-        ↓
-位置结果
-```
-
-这一阶段对我影响很大。
-
-它让我认识到：
-
-> 一个系统真正困难的地方，往往不是某一个算法，而是从原始输入到可靠输出之间完整链路的构建。
-
-这种工程思维后来也迁移到了 LLM 系统中：
-
-```text
-用户请求 / 原始知识
-        ↓
-处理与理解
-        ↓
-模型推理
-        ↓
-可信结果
-```
-
-## 三、企业软件工程：理解真实业务系统
-
-之后进入浪潮 HCM Cloud 项目团队，从数据和算法方向转向企业级 SaaS 后端研发。
-
-主要技术栈：
-
-- Python
-- Tornado
-- Celery
-- Redis
-- SQLAlchemy
-- MySQL/PostgreSQL
-
-参与：
-
-- 人事业务流程；
-- 权限体系；
-- 电子签集成；
-- 企业客户生产支持。
-
-这段经历补充了此前缺少的工程维度：
-
-**从"能运行"到"可交付"**
-
-实验环境中：
-
-代码能运行即可。
-
-企业环境中：
-
-还需要考虑：
-
-- 数据一致性；
-- 权限边界；
-- 异常恢复；
-- 性能优化；
-- 系统兼容性；
-- 线上问题处理。
-
-同时，我开始参与企业 AI 助手相关探索，也开始思考：
-
-> 如何将具有概率性的模型能力，安全地接入具有确定性要求的企业系统？
-
-这个问题成为后来学习 LLM 工程的重要驱动力。
-
-## 四、LLM 系统工程：让模型真正进入工程体系
-
-近年来，我开始投入时间研究 LLM 系统工程。
-
-关注方向不是单纯调用模型 API，而是：
-
-> 如何让大模型在有限资源下稳定运行，并成为企业系统的一部分。
-
-### 1. 本地模型部署与推理优化
-
-基于：
-
-- llama.cpp；
-- AMD ROCm；
-- 本地消费级硬件。
-
-探索：
-
-- 模型量化；
-- MoE 模型调度；
-- 推理性能测试；
-- 投机解码验证。
-
-在实际测试过程中，我逐渐形成一个原则：
-
-> 没有可复现的 benchmark，就没有可靠的工程决策。
-
-因此针对模型测试，固定：
-
-- 模型版本；
-- 编译版本；
-- Prompt；
-- 输出长度；
-- 测试流程。
-
-记录不同硬件和参数组合下的实际表现，而不是依赖经验判断。
-
-### 2. 本地 LLM 助手与 Agent 工程
-
-开发本地 LLM 助手系统，包括：
-
-- 模型调用；
-- Agent 工作流；
-- 工具调用；
-- RAG；
-- 多入口交互。
-
-其中重点探索：
-
-> 如何给 Agent 建立工程化安全边界。
-
-例如：
-
-- 命令执行风险控制；
-- 权限检查；
-- 审计日志；
-- 工具调用约束。
-
-实践让我认识到：
-
-> Agent 的能力越强，越需要严格的工程约束。
-
-不能依赖 Prompt 要求模型"不要犯错"。
-
-### 3. 知识库与 RAG 工程化
-
-维护本地知识库体系：
-
-- 原始资料管理；
-- 知识结构化；
-- 自动校验；
-- 持续维护。
-
-相比简单的文档问答，我更关注：
-
-> 企业知识如何长期沉淀成为可维护资产。
-
-因为企业真正需要的，不只是一次回答，而是一套能够持续演进的知识系统。
-
-## 五、企业 AI 落地：明确模型和业务系统边界
-
-参与企业 AI 助手探索过程中，我逐渐形成一个架构认识：
-
-> 大模型负责理解和生成，业务系统负责确定性执行。
-
-例如：
-
-招聘匹配场景：
-
-```text
-岗位描述
-    ↓
-LLM 生成岗位画像
-    ↓
-用户确认
-    ↓
-业务系统执行筛选和评分
-    ↓
-结果保存与审计
-```
-
-其中：
-
-模型负责：
-
-- 意图理解；
-- 信息抽取；
-- 内容生成。
-
-业务系统负责：
-
-- 权限；
-- 数据；
-- 规则；
-- 审计。
-
-这也是我理解企业 AI 和普通 Demo 最大的区别：
-
-> 企业需要的不只是智能，而是可控、可解释、可维护的智能。
-
-## 六、未来方向
-
-目前希望继续深入：
-
-- 企业级 LLM 应用；
-- AI 平台工程；
-- 私有化模型部署；
-- RAG 与 Agent 系统。
-
-我认为未来企业 AI 落地的关键问题包括：
-
-**1. 可靠边界**
-
-让 AI 能力和业务规则形成合理分工。
-
-**2. 工程化部署**
-
-解决：
-
-- 模型选择；
-- 推理优化；
-- 成本控制；
-- 私有化环境部署。
-
-**3. 知识持续沉淀**
-
-让企业知识从一次查询，变成长期可维护资产。
-
-回顾这一路：
-
-- 数学训练让我学会抽象问题；
-- GNSS 项目让我理解数据链路；
-- 企业软件让我理解真实系统；
-- LLM 工程正在把这些能力重新组合。
-
-最终目标不是简单使用 AI，而是：
-
-> 让 AI 成为可靠的软件系统能力。
+- Email: [lyuxuxin@163.com](mailto:lyuxuxin@163.com)
+- Location: Jinan, China
+- Current focus: Python backend development and enterprise AI applications
